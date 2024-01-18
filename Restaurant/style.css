@@ -78,7 +78,19 @@ table tr {
   width: 90%;
   letter-spacing: 0.2rem;
   border-radius: 0 4rem 4rem 0;
+  text-decoration: none;
 }
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 td {
   font-weight: 600;
   font-size: 1.4rem;
