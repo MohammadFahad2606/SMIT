@@ -55,7 +55,7 @@ body {
   width: 100%;
 }
 .image {
-  max-height: 39%;
+  object-fit: cover;
 }
 
 .table {

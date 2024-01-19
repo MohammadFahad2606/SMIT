@@ -85,6 +85,8 @@ section {
   margin-bottom: 2rem;
 }
 span {
+  text-align: center;
+  justify-content: center;
   color: var(--main-color);
 }
 
