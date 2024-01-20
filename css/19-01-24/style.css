@@ -1,0 +1,26 @@
+body {
+  color: aqua;
+}
+
+.bord {
+  padding: rem 3rem;
+}
+
+.row {
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+}
+
+.box-white {
+  background-color: gainsboro;
+  height: 5rem;
+  width: 5rem;
+}
+.box-black {
+  height: 5rem;
+  width: 5rem;
+  background-color: black;
+  border: 2px solid black;
+}
