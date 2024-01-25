@@ -11,12 +11,21 @@
   font-family: "Poppins", sans-serif;
 }
 
+/* :root {
+  --bg-color: #ffffff;
+  --second-bg-color: #d1cece;
+  --text-color: #000000;
+  --main-color:#706666;
+} */
+
+
 :root {
   --bg-color: #1f242d;
   --second-bg-color: #323949;
   --text-color: #fff;
   --main-color: #00eeff;
 }
+
 
 html {
   font-size: 62.5%;
@@ -27,35 +36,44 @@ body {
   color: var(--text-color);
 }
 section {
-  min-height: 100vh;
+  min-height: 90vh;
   color: var(--text-color);
 }
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
+  height: 10vh;
   padding: 2rem 9%;
   background: var(--bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  z-index: 90;
 }
 
-.logo {
+/* .logo {
+  z-index: 91;
   font-size: 2.5rem;
-  color: var(--text-color);
+  background-color: red;
   font-weight: 600;
   cursor: default;
+} */
+
+.logo {
+  z-index: 100;
+  cursor: default;
+  height: 4rem;
+  width: 4rem;
 }
 
 .navbar a {
   font-size: 1.7rem;
   color: var(--text-color);
   margin-left: 4rem;
-  transition: 3s;
+  transition: 1s;
 }
 .navbar a:hover,
 .navbar a.active {
@@ -69,32 +87,50 @@ section {
 }
 
 .home {
+  margin: 0 3rem 3rem 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .home-img img {
-  width: 25vw;
+  width: 30vw;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-.home-contect h3 {
-  font-size: 3.2rem;
-  font-weight: 700;
-}
-.home-contect h3:nth-of-type(2) {
-  margin-bottom: 2rem;
-}
-span {
-  text-align: center;
-  justify-content: center;
-  color: var(--main-color);
-}
+
+
 
 .home-contect h1 {
-  font-size: 5.6rem;
+  font-size: 5rem;
   font-weight: 700;
   line-height: 1.3;
 }
+
+
+#white-span{
+  color: var(--text-color);
+  padding: 0 5rem;
+  
+  }
+  
+  .home-contect h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+  
+  .Graphic-heading{
+    color: var(--main-color);
+  }
+  /* .home-contect h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+  } */
+  span {
+    text-align: center;
+    justify-content: center;
+    color: var(--main-color);
+  }
 
 .home-contect p {
   font-size: 1.6rem;
@@ -147,8 +183,10 @@ span {
   background: var(--second-bg-color);
   min-height: 100vh;
 }
-.about-img {
+
+.about-img img{
   width: 35vw;
+  padding: 1rem;
 }
 
 #about-me {
@@ -252,3 +290,136 @@ span {
 .portfolio-box img {
   height: 200px;
 }
+
+
+
+
+
+
+
+/* Mobile First Styles */
+
+@media screen and (max-width: 480px) {
+  body {
+    /* background-color: lightgreen; */
+  }
+
+
+body {
+  font-size: 1.6rem; /* Set a base font size for better scalability */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  
+
+}
+
+.logo {
+  font-size: 2rem; /* Adjust font size for smaller screens */
+}
+
+.navbar a {
+  display: none;
+  font-size: 1.4rem; /* Adjust font size for smaller screens */
+}
+
+#menu-icon {
+  
+  font-size: 2.5rem; /* Adjust font size for smaller screens */
+  display: inline; /* Display the menu icon on smaller screens */
+}
+
+.home {
+  flex-direction: column; /* Stack home elements vertically on smaller screens */
+  text-align: center;
+  margin: 0;
+}
+
+.home-img img {
+  width: 100%; /* Make the image fill the container on smaller screens */
+}
+
+.home-contect h1 {
+  font-size: 3rem; /* Adjust font size for smaller screens */
+}
+
+#white-span {
+  padding: 0; /* Remove extra padding for smaller screens */
+}
+
+.social-media a {
+  width: 3rem; /* Adjust social media icon size for smaller screens */
+  height: 3rem;
+  margin: 1.5rem 1rem 1.5rem 0; /* Adjust margin for smaller screens */
+}
+
+.btn {
+  padding: 1rem 2rem; /* Adjust button padding for smaller screens */
+  font-size: 1.4rem; /* Adjust font size for smaller screens */
+}
+
+
+.about{
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+}
+
+
+.about img{
+  width:100vw;
+}
+
+.about-content{
+  padding: 3rem 3rem;
+  justify-content: center;
+  align-content: center;
+}
+.about-content h2{
+  justify-content: center;
+  text-align: center;
+}
+}
+
+/* Media Queries for Tablets */
+@media screen and (min-width: 768px) {
+  .home {
+    flex-direction: row; /* Switch back to horizontal layout for tablets */
+  }
+}
+
+/* Media Queries for Desktops */
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 2rem 9%; /* Adjust padding for larger screens */
+  }
+
+  .navbar a {
+    margin-left: 4rem; /* Reset margin for larger screens */
+  }
+
+  .home-img img {
+    width: 30vw;
+  }
+  
+  .home-contect h1 {
+    font-size: 5rem;
+  }
+
+  #white-span {
+    padding: 0 5rem; /* Restore padding for larger screens */
+  }
+
+  .social-media a {
+    width: 4rem; /* Reset social media icon size for larger screens */
+    height: 4rem;
+    margin: 3rem 1.5rem 3rem 0; /* Reset margin for larger screens */
+  }
+
+  .btn {
+    font-size: 1.6rem; /* Reset font size for larger screens */
+  }
+}
+
