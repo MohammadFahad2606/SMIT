@@ -299,11 +299,7 @@ section {
 
 /* Mobile First Styles */
 
-@media screen and (max-width: 480px) {
-  body {
-    /* background-color: lightgreen; */
-  }
-
+@media screen and (max-width: 480px) 
 
 body {
   font-size: 1.6rem; /* Set a base font size for better scalability */
