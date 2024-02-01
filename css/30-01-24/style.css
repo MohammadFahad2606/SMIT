@@ -64,9 +64,7 @@ border: 2px solid gray;
 .border{
     margin: 0 5px;
     border: 1px solid gray;
-    height: 1px;
     width: 100px;
-    background-color: gray;
 }
 
 .login{
