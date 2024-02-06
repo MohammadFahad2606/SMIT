@@ -20,25 +20,7 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
-.navbar-right {
-  gap: 1rem;
-  font-size: 1.5rem;
-  color: var(--text-color);
-  padding: 0.5rem 1rem;
-}
 
-.navbar-right a {
-  color: var(--text-color);
-}
-
-.bnt-signup {
-  font-size: 1rem;
-  background-color: var(--main-color);
-  border-radius: 5px;
-  padding: 0.5rem;
-  color: var(--second-bg-color);
-  font-weight: 600;
-}
 
 .flex {
   display: flex;
@@ -67,10 +49,11 @@ body {
 
 .navbar a {
   float: left;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: .7rem;
   color: var(--text-color);
   text-align: center;
-  padding: 1rem 1rem;
+  padding: 1rem .4rem;
   text-decoration: none;
 }
 
@@ -84,7 +67,7 @@ body {
 }
 
 .dropdown .dropbtn {
-  font-size: 1rem;
+  font-size: .7rem;
   border: none;
   outline: none;
   color: var(--text-color);
@@ -119,16 +102,59 @@ body {
   display: block;
 }
 
+
+/* navbar-right */
+
+.navbar-right {
+  gap: 1rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+}
+
+.navbar-right a {
+  color: var(--text-color);
+}
+
+.navbar-right a:hover{
+  color: var(--main-color);
+}
+
+
+.navbar-right i {
+  color: var(--text-color);
+}
+
+.navbar-right i:hover{
+  color: var(--main-color);
+}
+
+.bnt-signup {
+  font-size: .8rem;
+  background-color: var(--main-color);
+  border-radius: 7px;
+  padding: 0.4rem;
+  color: var(--second-bg-color);
+  font-weight: 600;
+}
+
+.bnt-signup i{
+  color: var(--bg-color) !important;
+}
+
+.bnt-signup:hover{
+  cursor: pointer;
+  background-color: #f3ba2bc7;
+}
+
+
+
 .container {
   display: flex;
   justify-content: space-around;
   padding: 5rem 5rem;
 }
 
-.left-container {
-  /* height: 100vh;
-  width: 50vw; */
-}
 
 .left-container h1 {
   font-size: 4rem;
@@ -160,6 +186,10 @@ input[type="email"] {
   background-color: none;
 }
 
+input[type="email"]:hover{
+  border: 2px solid var(--main-color);
+}
+
 .register {
   background: var(--main-color);
   height: 2.5rem;
@@ -168,6 +198,11 @@ input[type="email"] {
   width: 30%;
   border: none;
   font-weight: bold;
+}
+
+.register:hover{
+  cursor: pointer;
+  background: #f3ba2bc7;
 }
 
 .register-line {
@@ -188,6 +223,12 @@ input[type="email"] {
   background-color: var(--second-bg-color);
 }
 
+
+.container-box:hover{
+background-color: rgba(41, 41, 41, 0.411);
+transform: scale(1.1);
+}
+
 .line {
   display: flex;
   justify-content: space-between;
@@ -199,14 +240,17 @@ input[type="email"] {
 }
 
 .line h5 {
-  padding-left: 0.3rem;
+  padding-left: 0.5rem;
   font-size: 0.7rem;
 }
 
 .line h5 span {
+  padding-left: 0.3rem;
+  font-size: 0.5rem;
   color: var(--text-second-color);
 }
 .line h6 {
+  text-align: right !important;
   font-size: 0.7rem;
 }
 .line img {
@@ -260,7 +304,6 @@ font-size: .6rem;
 }
 .connect-logo{
   gap: 1rem;
-  
   display: flex;
 }
 .connect-logo img{
@@ -273,8 +316,16 @@ font-size: .6rem;
   border: 1px solid var(--text-second-color);
   padding: .4rem;
   gap: 1rem;
+  text-align: center;
 }
 
-boxder-logo i{
+.boxder-logo:hover{
+  border: 1px solid var(--main-color);
+  transform: scale(1.1);
+}
+
+.boxder-logo i{
   color: var(--main-color);
 }
+
+
