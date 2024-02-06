@@ -185,7 +185,7 @@ section {
 }
 
 .about-img img{
-  width: 35vw;
+  width: 25vw;
   padding: 1rem;
 }
 
@@ -193,7 +193,7 @@ section {
   text-align: left;
 }
 .hading {
-  padding-top: 8rem;
+  padding-top: 3rem;
   text-align: center;
   font-size: 4.5rem;
 }
@@ -286,10 +286,16 @@ section {
   border-radius: 2rem;
   box-shadow: 0 0 1rej var(--bg-color);
   overflow: hidden;
+  padding: 0.5rem;
 }
 
 .portfolio-box img {
   height: 200px;
+}
+
+.portfolio-box i {
+  color: var(--text-color);
+  font-size: 1rem;
 }
 
 
@@ -303,22 +309,15 @@ section {
 @media screen and (max-width: 480px) 
 {
 body{
-  background-color: bisque;
   font-size: 1.6rem; /* Set a base font size for better scalability */
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  
-
-}
 
 .logo {
   font-size: 2rem; /* Adjust font size for smaller screens */
 }
 
-.navbar a {
+.navbar{
   display: none;
   font-size: 1.4rem; /* Adjust font size for smaller screens */
 }
@@ -375,16 +374,25 @@ body{
   flex-direction: column;
   text-align: center;
   margin: 0;
-  /* padding: 3rem auto;
+  padding: 0 2rem 4rem 2rem;
   justify-content: center;
-  text-align: center; */
+  text-align: center;
 }
-.about-content h2{
-  align-items: center;
+#about-me{
   text-align: center;
   padding: 0;
-  margin: auto;
+  margin-top: 0;
 }
+.about-content h3{
+  text-align: center;
+}
+
+.portfolio-container{
+  flex-direction: column;
+  padding: 2rem;
+}
+
+
 }
 
 /* Media Queries for Tablets */
