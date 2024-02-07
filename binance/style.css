@@ -43,6 +43,10 @@ body {
   width: 120px;
 }
 
+.menu-icon{
+  display: none;
+}
+
 .navbar {
   overflow: hidden;
 }
@@ -328,4 +332,28 @@ font-size: .6rem;
   color: var(--main-color);
 }
 
+@media screen and (max-width: 480px) {
+  body {
+  
+  }
 
+  .header{
+
+    display: flex;
+gap: 2rem;
+    justify-content: space-evenly;
+  }
+  .menu-icon{
+    display: block;
+  }
+  .navbar-left{
+    /* display: flex;
+    justify-content: space-around;
+    background-color: #f1445b; */
+  }
+
+
+  .navbar,.navbar-right{
+    display: none;
+  }
+}
