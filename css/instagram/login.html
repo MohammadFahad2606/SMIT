@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.login-form {
+    justify-content: center;
+align-items: center;
+    max-width: 300px;
+    margin: 0 ;
+    padding: 5rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+    <!-- <div class="container-login flex">
+<div class="mobile-section">
+
+<img src="./Sourc/home-phones-2x.png">
+
+</div>
+
+
+<div class="login-section">
+
+<div class="login-container">
+
+    <img src="./Sourc/instagram-name-logo.png" alt="">
+
+<input type="text" name="" id="">
+<input type="password" name="" id="">
+<button>login</button>
+
+</div>
+    
+</div>
+
+
+    </div> -->
+
+
+
+   
+        <div class="login-container">
+            <form class="login-form" onsubmit="validateLogin(event)">
+                <h1>Login</h1>
+                <label for="username">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    
+        <script>
+            function validateLogin(event) {
+                event.preventDefault();
+    
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('password').value;
+    
+                // Check if the entered email and password match the specified values
+                if (email === 'design4youonline@gmail.com' && password === '12345678') {
+                    // Redirect to the specified page
+                    window.location.href = './index.html';
+                } else {
+                    alert('Invalid email or password. Please try again.');
+                }
+            }
+        </script>
+    
+
+
+</body>
+</html>
