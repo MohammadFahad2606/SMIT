@@ -197,6 +197,8 @@ section {
   text-align: center;
   font-size: 4.5rem;
 }
+.margin-extra{
+  padding-top: 8rem !important;}
 
 .about-content h3 {
   text-align: left;
@@ -276,17 +278,32 @@ section {
 .portfolio-container {
   display: flex;
   justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
+  flex-wrap: wrap;
   align-content: center;
   gap: 2.5rem;
   padding: auto 6rem;
 }
 .portfolio-box {
+  width: 28vw;
   position: relative;
   border-radius: 2rem;
   box-shadow: 0 0 1rej var(--bg-color);
   overflow: hidden;
   padding: 0.5rem;
+  transition-duration: 1s;
+}
+.portfolio-box img{
+  width: 100%;
+  border-radius: 1rem;
+}
+.portfolio-box h4, p{
+  color: var(--text-color);
+}
+
+.portfolio-box:hover{
+  transform: scale(1.1);
+  transition-duration: 1s;
 }
 
 .portfolio-box img {
@@ -298,6 +315,46 @@ section {
   font-size: 1rem;
 }
 
+.contact{
+  background-color: var(--bg-color);
+}
+
+.container-contact {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  /* background-color: #fff; */
+  box-shadow: 0 0 10pxrgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* h1 {
+  text-align: center;
+  color: #333; */
+
+
+form {
+  display: grid;
+  gap: .8rem;
+}
+
+label {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--bg-color);
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  padding: 12px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
 
 
 
