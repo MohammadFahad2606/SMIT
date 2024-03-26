@@ -1,0 +1,162 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: fixed;
+}
+
+header h1 {
+  float: left;
+}
+#up-Arow {
+  height: 50px;
+  width: 50px;
+  position: sticky;
+  scroll-behavior: smooth;
+  top: 77vh;
+  left: 90vw;
+}
+
+nav ul {
+  float: right;
+}
+
+nav ul li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#banner {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 50px 0;
+}
+
+#banner h2 {
+  margin-bottom: 20px;
+}
+#containerBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productBox {
+  width: 30%;
+  margin: 1% 1.5%;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  text-align: center;
+}
+
+.productBox img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.info h2 {
+  font-size: 1.3rem;
+}
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.info button,
+h2,
+h4 {
+  padding: 4px;
+  margin: 4px;
+}
+
+/* test page css */
+
+.contener-show-roduct {
+  background-color: teal;
+  width: 100%;
+  height: 100vh;
+}
+
+#product {
+  margin-top: 50px;
+}
+
+.product-details {
+  display: flex;
+}
+
+.product-details img {
+  width: 50%;
+}
+
+.info {
+  width: 100%;
+}
+
+.info h2 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* test page css end */
+
+.footer {
+  width: 100%;
+  color: #fff;
+  background-color: #333;
+  text-align: center;
+  height: 10vh;
+}
+.footer p {
+  padding-top: 20px;
+}
