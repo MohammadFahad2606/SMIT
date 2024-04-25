@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Fahad";
+  src: url(./fonts/Fort\ Yukon\ Grunge.ttf);
+}
+
+body {
+  background: violet;
+  text-align: center;
+  font-family: fahad;
+}
+
+h1 {
+  padding: 10px;
+  text-transform: capitalize;
+  border: 4px solid blanchedalmond;
+}
+img {
+  border-radius: 200%;
+  height: 10rem;
+}

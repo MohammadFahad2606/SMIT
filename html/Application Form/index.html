@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Application Form</title>
+
+    <!-- styling -->
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #1a072c;
+        color: aliceblue;
+      }
+
+      #section {
+        text-align: center;
+        /* border-radius: 30px;
+        border: 2px solid; */
+        align-content: center;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+      span {
+        color: orange;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="section">
+      <form>
+        <h1>Application <span>Form</span></h1>
+        <!-- First Name -->
+        <label for="first-name">First Name:</label>
+        <input
+          placeholder="First Name"
+          type="text"
+          id="first-name"
+          name="first-name"
+          required
+        />
+
+        <!-- Last Name -->
+        <label for="last-name">Last Name:</label>
+        <input
+          placeholder="Last Name"
+          type="text"
+          id="last-name"
+          name="last-name"
+          required
+        />
+
+        <br /><br />
+        <!-- Date of Birth -->
+        <label for="date">Date of Birth:</label>
+        <input value="date" type="date" id="date" name="date" />
+
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input
+          value="age"
+          type="number"
+          id="age"
+          name="age"
+          placeholder="Age"
+        />
+        <br /><br />
+
+        <!-- Gender -->
+        <label for="gender">Gender:</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+
+        <!-- Email -->
+
+        <label for="email">Email:</label>
+        <input placeholder="Email" type="email" id="email" name="email" />
+        <br /><br />
+
+        <!-- Positions -->
+
+        Positions Available:
+
+        <input type="radio" name="positions" id="junior-developer" />
+        <label for="junior-developer">Junior Developer</label>
+
+        <input type="radio" name="positions" id="mid-level-developer" />
+        <label for="mid-level-developer">Mid-level Developer</label>
+
+        <input type="radio" name="positions" id="Senior Developer" />
+        <label for="Senior Developer">Senior Developer</label>
+        <br /><br />
+
+        <!-- Programmig Languages -->
+
+        <label for="programmig">Programmig Languages:</label>
+        <input name="programmig" id="programmig" type="checkbox" />Java
+        <input name="programmig" id="programmig" type="checkbox" />JaveScript
+        <input name="programmig" id="programmig" type="checkbox" />Python
+
+        <br /><br />
+        <!-- Password -->
+
+        <label for="Password">Password:</label>
+        <input
+          type="password"
+          id="Password"
+          name="Password"
+          placeholder="Password"
+        />
+        <label for="confirm-password">Confirm Password:</label>
+        <input
+          type="confirm-password"
+          id="confirm-password"
+          name="confirm-password"
+          placeholder="Confirm Password"
+        />
+        <br /><br />
+        <!-- Button -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  color: blue;
+  background: #000;
+}
+
+main {
+  background: red;
+}
+
+#heading {
+  color: white;
+}
+footer {
+  background: gold;
+  :gold ;
+}
+#footer {
+  color: brown;
+}
