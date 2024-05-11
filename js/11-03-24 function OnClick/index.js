@@ -9,11 +9,10 @@
 // }
 
 var input = document.getElementById("input");
-console.log(input.);
+console.log(input.value);
 
 function test() {
-
-  console.log()
+  console.log();
 }
 
 // console.log(test);
