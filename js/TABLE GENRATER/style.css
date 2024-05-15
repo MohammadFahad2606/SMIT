@@ -7,15 +7,24 @@ body {
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
-  margin: 0 auto;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: 2vh;
 }
 
 .main {
   display: flex;
-  width: 100%;
+  width: 80vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 96vh;
+  background-color: #cad3c8;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .main h1 {
   margin-bottom: 10px;
@@ -25,9 +34,18 @@ body {
 #form input {
   width: 100%;
   padding: 10px;
+  color: #2c3a47;
   margin-bottom: 10px;
   border-radius: 10px;
-  border: 1px solid black;
+  border: none;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  outline: none;
+  background-color: transparent;
+  /* border: 1px solid black; */
+}
+#form input:hover {
+  box-shadow: none;
+  /* border: 1px solid black; */
 }
 #form input::placeholder {
   font-size: 15px;
@@ -43,9 +61,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  overflow: auto;
   flex-wrap: wrap;
   width: 80%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 .table h2 {
   border-bottom: 1px solid black;
@@ -67,7 +105,7 @@ body {
 }
 .footer {
   bottom: 0;
-  position:fixed;
+  position: fixed;
   width: 100%;
   color: black;
   background-color: gainsboro;
