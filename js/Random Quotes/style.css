@@ -31,6 +31,17 @@ html {
   position: relative;
   box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.1);
 }
+.header ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.header ul li {
+  font-size: 2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+}
 .heading {
   font-family: UrduFont;
   font-size: 5rem;
@@ -40,7 +51,7 @@ html {
   height: 50%;
   overflow: auto;
 }
-#quotes {
+#metter {
   font-family: UrduFont;
   color: green;
   font-size: 3rem;

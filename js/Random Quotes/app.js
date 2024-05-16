@@ -1,4 +1,4 @@
-let quotes = document.querySelector("#quotes");
+let metter = document.querySelector("#metter");
 
 function clickBtn() {
   let array = [
@@ -102,5 +102,5 @@ function clickBtn() {
     "نیک کام میں دیر نہ کرو۔",
   ];
   let idx = Math.floor(Math.random() * array.length);
-  quotes.innerText = `${array[idx]}`;
+  metter.innerText = `${array[idx]}`;
 }
