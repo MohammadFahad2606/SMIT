@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "UrduFont";
+  src: url("./Urdu/Jameel\ Noori\ Nastaleeq\ Kasheeda.ttf");
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: rgb(41, 128, 185);
+  background: linear-gradient(90deg, #2980b9 0%, #090979 45%, #2980b9 100%);
+}
+
+.main-box {
+  width: 85vw;
+  height: 85vh;
+  background-color: #ffffffde;
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  /* justify-content: center; */
+  font-size: 1.3rem;
+  padding: 30px;
+  position: relative;
+  box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1r;
+}
+.wrapper {
+  height: 50%;
+  overflow: auto;
+}
+#userInput {
+  width: 80%;
+  border-radius: 10px;
+  height: 80%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 20px;
+}
+#userInput::placeholder {
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.bottom-button {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #090979;
+  color: white;
+  border: none;
+  padding-top: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  z-index: 100;
+}
+
+.bottom-button:hover {
+  background-color: #2980b9;
+}
