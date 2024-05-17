@@ -55,6 +55,35 @@ html {
   text-transform: uppercase;
   padding: 5px;
 }
+.boxwrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+.boxwrap h5{
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 5px;
+  font-size: 1.2rem;
+  color: green;
+}
+.wrap{
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.box {
+  height: 50px;
+  width: 80px;
+  background-color: #2980b9;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+}
 
 .bottom-button {
   margin: 20px;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>paragraph checker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-box">
+      <h1 class="heading">Paragraph checker</h1>
+      <div class="wrapper">
+        <textarea
+          placeholder="Please enter a paragraph"
+          id="userInput"
+          cols="30"
+          rows="5"
+        ></textarea>
+      </div>
+      <div id="boxwrap" class="boxwrap">
+        <div class="wrap">
+          <div id="words" class="box">0</div>
+          <h5>Words</h5>
+        </div>
+        <div class="wrap">
+          <div id="letters" class="box">0</div>
+          <h5>letters</h5>
+        </div>
+        <div class="wrap">
+          <div id="lines" class="box">0</div>
+          <h5>lines</h5>
+        </div>
+        <div class="wrap">
+          <div id="paragraph" class="box">13</div>
+          <h5>Paragraph</h5>
+        </div>
+      </div>
+    </div>
+    <button onclick="clickBtn()" class="bottom-button">Click Me</button>
+    <script src="app.js"></script>
+  </body>
+</html>
