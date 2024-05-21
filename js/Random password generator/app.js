@@ -35,6 +35,6 @@ function Copyright() {
   let date = new Date();
 
   let footerCopyright = document.querySelector(".footer-copyright p ");
-  footerCopyright.innerText = `© ${date.getFullYear()} Muhammad Fahad. All Rights Reserved.`;
+  footerCopyright.innerText = `© ${date.getFullYear()} <span><a href="https://mfahaddev.netlify.app/">Muhammad Fahad.</a></span> All Rights Reserved.`;
 }
 Copyright();
