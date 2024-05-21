@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Password Generator</title>
+    <link
+      rel="shortcut icon"
+      href="https://play-lh.googleusercontent.com/1_Yqavw9mMbBwp42yl88chb2pXYa2IM-rzV34yOkP6onPlMTcEJl2Zp-_HNYyxV14A-w"
+      type="image/x-icon"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="haeading">random password generator</h1>
+    <div class="display">
+      <input id="userDisplay" type="text" />
+      <div>
+        <i onclick="copyPassword()" class="bx bx-copy"></i>
+        <i onclick="passwordBtn()" class="bx bx-refresh"></i>
+      </div>
+    </div>
+    <div class="length">
+      <h3 class="title">Password Length:</h3>
+      <div class="range">
+        <input
+          type="range"
+          min="0"
+          max="50"
+          value="8"
+          id="range2"
+          class="range-input"
+        />
+        <input
+          value="8"
+          name="length"
+          class="uservalue"
+          id="uservalue"
+          step="1"
+          type="number"
+          min="0"
+          max="50"
+        />
+      </div>
+    </div>
+    <div class="btn">
+      <button onclick="passwordBtn()" id="password-btn">
+        #GENERATED PASSWORD</button
+      ><button onclick="copyPassword()" class="password-btn">
+        Copy Password
+      </button>
+    </div>
+
+    <div class="footer-copyright">
+      <p>&copy; 2024 MUHAMMAD FAHAD. All Rights Reserved.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
