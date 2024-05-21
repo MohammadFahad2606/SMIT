@@ -182,7 +182,10 @@ body {
   color: #fff;
   justify-content: center;
 }
-
+.footer-copyright p a {
+  color: #16a085;
+  text-decoration: none;
+}
 .footer-copyright p {
   margin: 0;
   font-size: 14px;
