@@ -21,20 +21,26 @@ const colorPalette = [
   "#bdc3c7", // Silver
   "#7f8c8d", // Asbestos
 ];
-console.log(colorPalette[2]);
+// console.log(colorPalette[2]);
 
 for (let i = 0; i <= colorPalette.length - 1; i++) {
   main.innerHTML += `<div onclick="copyClor(this)" style="background-color: ${colorPalette[i]};" class="colrBoxCont">
   <p class="copy">COPY</p>
 </div>`;
 }
-let show = document.querySelector(".show");
-function copyClor(e) {
-  navigator.clipboard.writeText(e.style.backgroundColor);
-  show = style.backgroundColor;
+let show = document.querySelector("#show");
+function copyClor(a) {
+  var color = a.style.backgroundColor;
+  navigator.clipboard.writeText(a.style.backgroundColor);
+  show.style.backgroundColor = "flex";
+  show.classList.add("display");
 }
 
-// let ary = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
+// setTimeout(copyClor, 3000);
+// function test() {
+//   console.log((show.backgroundColor = "#c00000"));
+// }
+// // let ary = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "a", "b", "c", "d", "e", "f"];
 
 // function getRandomHexColor() {
 //   for (let i = 0; i < 5; i++) {

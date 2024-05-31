@@ -55,7 +55,7 @@ body {
 }
 
 .show {
-  background-color: #ffffff;
+  background-color: #4e4e4e;
   position: absolute;
   top: 0;
   height: 100%;
@@ -64,6 +64,9 @@ body {
   justify-content: center;
   width: 100vw;
   display: none;
+}
+.display {
+  display: flex;
 }
 .showBox {
   display: flex;
