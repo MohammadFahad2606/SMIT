@@ -21,7 +21,6 @@ const colorPalette = [
   "#bdc3c7", // Silver
   "#7f8c8d", // Asbestos
 ];
-// console.log(colorPalette[2]);
 
 for (let i = 0; i <= colorPalette.length - 1; i++) {
   main.innerHTML += `<div onclick="copyClor(this)" style="background-color: ${colorPalette[i]};" class="colrBoxCont">
@@ -30,12 +29,12 @@ for (let i = 0; i <= colorPalette.length - 1; i++) {
 }
 let show = document.querySelector("#show");
 function copyClor(a) {
-  var color = a.style.backgroundColor;
+  let color = a.style.backgroundColor;
+
   navigator.clipboard.writeText(a.style.backgroundColor);
-  show.style.backgroundColor = "flex";
+  show.style.backgroundColor = color;
   show.classList.add("display");
 }
-
 // setTimeout(copyClor, 3000);
 // function test() {
 //   console.log((show.backgroundColor = "#c00000"));

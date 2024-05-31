@@ -6,7 +6,6 @@
 body {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  /* background-color: aqua; */
 }
 .haeding {
   text-transform: capitalize;
@@ -15,7 +14,7 @@ body {
 }
 
 .main {
-  background-color: firebrick;
+  /* background-color: firebrick; */
   height: 90vh;
   width: 100vw;
   display: flex;
