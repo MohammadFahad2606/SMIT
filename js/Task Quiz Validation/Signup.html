@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./asset/QuizGrad-logo.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="main-login">
+      <div class="login-wrapper">
+        <img
+          id="logo"
+          onclick="HomePage()"
+          src="./asset/QuizGrad-logo.png"
+          alt="Logo"
+        />
+        <div class="heading">
+          <h3>Sign Up</h3>
+          <p class="singUp_p">It's quick and easy</p>
+        </div>
+        <div>
+          <div class="box">
+            <label for="user-email">Email Address</label>
+            <input type="text" name="email" id="user-email" />
+            <div class="validation">
+              <p>test</p>
+            </div>
+          </div>
+          <div class="box password">
+            <label for="user-password">Password</label>
+            <input type="password" name="Password" id="user-password" />
+          </div>
+          <div class="box password">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" />
+          </div>
+        </div>
+
+        <div class="loginBtns">
+          <button onclick="loginPageRedirecr()" class="btn1">Signup</button>
+        </div>
+      </div>
+
+      <div class="image">
+        <img src="./asset/Login-Hero.png" alt="Hero_image" />
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

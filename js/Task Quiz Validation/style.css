@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --primary: #fcc822;
+  --text: #333333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+::selection {
+  /* color: red; */
+  background: var(--primary);
+}
+.main {
+  height: 100vh;
+  width: 100vw;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+#logo {
+  cursor: pointer;
+}
+.header-wapper a {
+  text-decoration: none;
+  padding: 0 15px;
+  color: var(--text);
+  transition: 0.5s;
+}
+.header-wapper a:hover {
+  border-bottom: 2px solid var(--primary);
+  transition: 0.1s;
+}
+.btn2 {
+  border: 1px solid var(--primary);
+  background-color: transparent;
+  padding: 8px 20px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.btn2:hover {
+  box-shadow: 1px 5px 10px var(--primary);
+  transition: 0.5s;
+}
+.container {
+  width: 80%;
+  display: flex;
+  margin: 50px auto;
+}
+.container img {
+  width: 40%;
+}
+.wapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.wapper h1 {
+  font-size: 3rem;
+}
+.wapper p {
+  padding-left: 10px;
+  border-left: 1px solid;
+}
+.group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.group h4 {
+  color: var(--primary);
+  cursor: pointer;
+}
+.btn1 {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.btn1:hover {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  transition: 0.5s;
+  color: var(--primary);
+}
+
+.main-login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.image {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-wrapper {
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+  gap: 30px;
+}
+.login-wrapper img {
+  width: 40%;
+}
+.login-wrapper h3 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.singUp_p {
+  text-align: center;
+}
+.box label {
+  display: block;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--text);
+  padding: 0 20px;
+
+}
+.password {
+  border: 1px solid var(--text) !important;
+  border-top: none !important;
+}
+.box input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 5px;
+  color: var(--primary);
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.align {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.align label {
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"] {
+  width: 1.5em;
+  height: 1.5em;
+}
+.loginBtns {
+  display: flex;
+  gap: 50px;
+}
+
+.heading h3{
+    font-size: 2.7rem;
+}
+
+
+.validation{
+  display: flex;
+  position: absolute;
+  border: 1px solid black;
+  margin: 40px;
+  left: 300px;
+  color: red;
+  padding: 10px 40px;
+  background: white;
+  border-radius: 4px;
+}
+/* .loginBtns button {
+  padding: 20px;
+  background-color: var(--primary);
+} */
+/* .box input:active {
+  border: none;
+  outline: none;
+} */
+
+/* .main-login img{
+    width: 5%;
+} */
