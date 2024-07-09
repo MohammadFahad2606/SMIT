@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
@@ -14,15 +19,16 @@
   <body>
     <div class="main-login">
       <div class="login-wrapper">
-        <div><img
-          onclick="homePage()"
-          id="logo"
-          src="./asset/QuizGrad-logo.png"
-          alt="Logo"
-        /></div>
+        <div>
+          <img
+            onclick="homePage()"
+            id="logo"
+            src="./asset/QuizGrad-logo.png"
+            alt="Logo"
+          />
+        </div>
         <h3>Welcome back! Please login/Signup to your account.</h3>
         <form id="loginForm" onsubmit="login()" class="form">
-
           <div class="padding">
             <div class="box">
               <label for="email">Email Address</label>
@@ -33,8 +39,20 @@
               <label for="password">Password</label>
               <input type="password" name="Password" id="password" />
             </div>
-          </div>
-          <p class="validation"></p>
+            <!-- <div class="box eye">
+              <div>
+                <label for="user-password">Password</label>
+                <input type="password" id="user-password" />
+              </div>
+              <i
+                id="eye"
+                onclick="showPasswordLogin();"
+                class="fa-solid fa-eye-slash"
+              ></i>
+            </div>
+            <p class="validation"></p>-->
+          </div> 
+
           <div onsubmit="login()" class="flex">
             <div class="align">
               <input id="RememberMe" type="checkbox" />
