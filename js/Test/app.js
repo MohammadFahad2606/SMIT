@@ -42,5 +42,19 @@
 //   alert("invalid");
 // }
 
-let pass = 123;
-let userpass = prompt("pls enter pass");
+// let pass = 123;
+// let userpass = prompt("pls enter pass");
+
+
+let formFeild = document.querySelectorAll("form input");
+
+const [userName, userEmail, userPassword, userPic] = formFeild;
+
+console.log(userName, userEmail, userPassword);
+
+let imgUrl;
+// let userArrayData = [];
+const signup = () => {
+    event.preventDefault();
+    console.log(formFeild);
+}

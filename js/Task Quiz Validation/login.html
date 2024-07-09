@@ -14,35 +14,39 @@
   <body>
     <div class="main-login">
       <div class="login-wrapper">
-        <img
-          onclick="HomePage()"
+        <div><img
+          onclick="homePage()"
           id="logo"
           src="./asset/QuizGrad-logo.png"
           alt="Logo"
-        />
+        /></div>
         <h3>Welcome back! Please login/Signup to your account.</h3>
-        <div>
-          <div class="box">
-            <label for="email">Email Address</label>
-            <input type="text" name="email" id="email" />
-          </div>
-          <div class="box password">
-            <label for="password">Password</label>
-            <input type="password" name="Password" id="password" />
-          </div>
-        </div>
+        <form id="loginForm" onsubmit="login()" class="form">
 
-        <div class="flex">
-          <div class="align">
-            <input id="RememberMe" type="checkbox" />
-            <label for="RememberMe">Remember Me</label>
+          <div class="padding">
+            <div class="box">
+              <label for="email">Email Address</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <p class="validation"></p>
+            <div class="box">
+              <label for="password">Password</label>
+              <input type="password" name="Password" id="password" />
+            </div>
           </div>
-          <p>Forgot Password?</p>
-        </div>
-        <div class="loginBtns">
-          <button onclick="dashboardRed();" class="btn2">Login</button>
-          <button onclick="signupPageRedirecr();" class="btn1">Signup</button>
-        </div>
+          <p class="validation"></p>
+          <div onsubmit="login()" class="flex">
+            <div class="align">
+              <input id="RememberMe" type="checkbox" />
+              <label for="RememberMe">Remember Me</label>
+            </div>
+            <p>Forgot Password?</p>
+          </div>
+          <div class="loginBtns">
+            <button type="submit" class="btn2">Login</button>
+            <button onclick="signupPageRedirecr();" class="btn1">Signup</button>
+          </div>
+        </form>
       </div>
 
       <div class="image">

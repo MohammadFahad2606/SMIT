@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
@@ -14,42 +15,81 @@
   <body>
     <div class="main-login">
       <div class="login-wrapper">
-        <img
-          id="logo"
-          onclick="HomePage()"
-          src="./asset/QuizGrad-logo.png"
-          alt="Logo"
-        />
+       <div onclick="homePage();"> <img
+        id="logo"
+  
+        src="./asset/QuizGrad-logo.png"
+        alt="Logo"
+      /></div>
         <div class="heading">
           <h3>Sign Up</h3>
           <p class="singUp_p">It's quick and easy</p>
         </div>
         <div>
-          <div class="box" id="emailBox">
-            <label for="user-email">Email Address</label>
-            <input type="text" name="email" id="user-email" />
-          </div>
+          <form onsubmit="signup();">
 
-          <p class="validation" id="emailVal"></p>
-          <div class="box" id="passwordBox">
-            <label for="user-password">Password</label>
-            <input type="password" name="Password" id="user-password" />
-          </div>
-          <div class="validation" id="passVal"></div>
-          <div class="box" id="confpasswordBox">
-            <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" />
-          </div>
-          <p class="validation" id="cofpassVal"></p>
-        </div>
 
-        <div class="loginBtns">
-          <button onclick="loginPageRedirecr()" class="btn1">Signup</button>
-        </div>
+            <!-- Full Name -->
+            <div class="box" >
+              <label for="userName">Full Name</label>
+              <input onchange="removeValidation();" type="text" id="userName" />
+            </div>
+            <p class="validation"></p>
+            
+            <!-- Email AddressL -->
+            <div class="box">
+              <label for="user-email">Email Address</label>
+              <input type="text" id="user-email" />
+            </div>
+            <p class="validation"></p>
+
+
+            <!-- Password -->
+            <div class="box eye">
+              <div>
+              <label for="user-password">Password</label>
+              <input type="password"  id="user-password" />
+              </div>
+              <i id="eye" onclick="showPassword();"  class="fa-solid fa-eye-slash"></i>
+            </div>
+            <p class="validation"></p>
+
+            <!-- Confirm Password -->
+            <div class="box eye">
+              <div>
+                <label for="confirm-password">Confirm Password</label>
+
+                <input type="password" id="confirm-password" />
+              </div>
+
+            </div>
+            <p class="validation" id=></p>
+           
+
+            <!-- userPicture -->
+             <div class="flex1">
+              <label onchange="uploadImage();" for="userPic"><i class="fa-solid fa-upload"></i></label>
+              <input onchange="uploadImage()" accept="image/*" type="file" id="userPic" />
+              <div class="showPic">
+                <img id="profiepic" src="./asset/user-solid-icon.svg" alt="">
+              </div>
+             </div>
+            <p class="validation" ></p>
+            <!-- <img src="profie pic low.jpg" alt=""> -->
+
+          </div>
+          
+  
+          <div class="loginBtns">
+            <button  type="submit" class="btn1">Signup</button>
+          </div>
+          </form>
       </div>
 
+
+      <!-- Login-Hero -->
       <div class="image">
-        <img src="./asset/Login-Hero.png" alt="Hero_image" />
+        <img  src="./asset/Login-Hero.png" alt="Hero_image" />
       </div>
     </div>
 
