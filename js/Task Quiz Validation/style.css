@@ -155,7 +155,7 @@
 input {
   width: 100%;
 }
-.form{
+.form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -171,7 +171,7 @@ input {
   align-items: center;
   justify-content: center;
 }
-.padding{
+.padding {
   padding-top: 10px;
 }
 .align label {
@@ -206,9 +206,8 @@ input[type="checkbox"] {
   height: 50px;
   width: 50px;
   /* border: 1px solid var(--text); */
-  background-color: #fcc822;
+  /* background-color: #fcc822; */
   border-radius: 100%;
-
 }
 #profiepic {
   height: 50px;
@@ -225,12 +224,19 @@ input[type="checkbox"] {
 #userPic {
   display: none;
 }
+#dashboardImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  object-fit: contain;
+}
 label i {
   font-size: 35px;
   color: var(--primary);
 }
 
-.dropdown-menu li{
+.dropdown-menu li {
+  /* width: 10px!important; */
   text-align: center;
   cursor: pointer;
   /* width: 20px; */

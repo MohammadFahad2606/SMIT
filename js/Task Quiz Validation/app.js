@@ -10,10 +10,7 @@ let imgUrl;
 let formFeild = document.querySelectorAll("form input");
 const [userName, userEmail, userPassword, confirmPassword, userPic] = formFeild;
 
-
-
 // validation Error Id get
-
 
 let validation = document.querySelectorAll("form p");
 const [
@@ -24,13 +21,10 @@ const [
   userPicValidation,
 ] = validation;
 
-
-
-
-
 // // // uploadImage
 
 let showPic = document.querySelector("#profiepic");
+// let showPicDiv = document.querySelector(".showPic");
 // console.log(showPic.src);
 const uploadImage = () => {
   let img = userPic.files[0];
@@ -40,11 +34,9 @@ const uploadImage = () => {
     showPic.src = imgUrl;
   };
   fileRead.readAsDataURL(img);
+  // showPicDiv.style.display = "block"
   showPic.src = imgUrl;
 };
-
-
-
 
 const homePage = () => {
   console.log("home");
@@ -52,7 +44,7 @@ const homePage = () => {
 };
 
 // // //  Signup Function
-// 
+//
 const signup = () => {
   event.preventDefault();
 
@@ -61,19 +53,24 @@ const signup = () => {
   } else {
   }
 
-  if (emailReg.test(userEmail.value)) {
+  if (emailReg.test(userEmail.value) === true) {
+    if (passwordReg.test(userPassword.value) === true) {
+    } else {
+      userPasswordValidation.innerHTML = `<p>Your password must be have at least</p>
+      <ul>
+    <li>8 characters long</li>
+    <li>1 uppercase &amp; 1 lowercase character</li>
+    <li>1 number</li>
+    </ul>`;
+    }
+    
   } else {
     userEmailValidation.innerText = "Please Enter a Valid Email Address";
   }
-  if (passwordReg.test(userPassword.value)) {
-  } else {
-    userPasswordValidation.innerHTML = `<p>Your password must be have at least</p>
-    <ul>
-  <li>8 characters long</li>
-  <li>1 uppercase &amp; 1 lowercase character</li>
-  <li>1 number</li>
-  </ul>`;
+  if(userPassword.value === "") {
+    userPasswordValidation.innerHTML = `<p>Please Enter a password</p>`;
   }
+ 
 
   if (confirmPassword.value !== "") {
     if (userPassword.value != confirmPassword.value) {
@@ -86,37 +83,29 @@ const signup = () => {
         picture: imgUrl,
       };
 
-
-
-
       // console.log(userPic);
       localStorage.setItem("userData", JSON.stringify(userData));
       window.location.href = "./login.html";
-
-
-
-
     }
   } else {
     confirmPasswordValidation.innerText = "Please Enter Confirm Password";
   }
 
-  
-  if((userNameValidation.innerText != "") ||(userEmailValidation.innerText != "")||(userPasswordValidation.innerText != "")||(confirmPasswordValidation.innerText != "")){
+  if (
+    userNameValidation.innerText != "" ||
+    userEmailValidation.innerText != "" ||
+    userPasswordValidation.innerText != "" ||
+    confirmPasswordValidation.innerText != ""
+  ) {
     setTimeout(() => {
-   
-      removeValidation()
-    
-    }, 2000)
+      removeValidation();
+    }, 2000);
   }
 };
 
-
-
- // removeValidation
+// removeValidation
 
 const removeValidation = () => {
-
   userNameValidation.innerText = "";
   userEmailValidation.innerText = "";
   userPasswordValidation.innerText = "";
@@ -138,14 +127,11 @@ const showPassword = () => {
   }
 };
 const signupPageRedirecr = () => {
-  
   window.location.href = "./Signup.html";
 };
 const loginPageRedirecr = () => {
-  
   window.location.href = "./login.html";
 };
-
 
 // loginFrom
 
@@ -156,48 +142,42 @@ const [loginEmail, loginPassword] = loginvalue;
 
 // loginValidation
 
-const loginValidation = document.querySelectorAll("#loginForm p")
-const [loginEmailVal,loginPasswordVal] = loginValidation
+const loginValidation = document.querySelectorAll("#loginForm p");
+const [loginEmailVal, loginPasswordVal] = loginValidation;
 
 // localStorage get
 
 const data = JSON.parse(localStorage.getItem("userData"));
-const {email,password,Name,picture} = data
-
-
-
+const { email, password, Name, picture } = data;
 
 // login
 
-
 const login = () => {
   event.preventDefault();
-  // 
-if((loginEmail.value).trim()=== ""){
-  loginEmailVal.innerText = "Please Enter Email"
-} 
-if((loginPassword.value).trim()=== ""){
-  loginPasswordVal.innerText = "Please Enter Password"
-}
-if((loginEmail.value !== email) && (loginPassword.value !== password)){
-  loginEmailVal.innerText = "No user found with matching email"
-  loginPasswordVal.innerText = "The password that you've entered is incorrect."
-}else{
-window.location.href = "./dashboard.html";
-}
 
+  if (loginEmail.value.trim() === "") {
+    loginEmailVal.innerText = "Please Enter Email";
+  }
+  if (loginPassword.value.trim() === "") {
+    loginPasswordVal.innerText = "Please Enter Password";
+  }
+  if (loginEmail.value === email && loginPassword.value === password) {
+    window.location.href = "./dashboard.html";
+  } else if (loginEmail.value !== email && loginPassword.value !== password) {
+    loginEmailVal.innerText = "No user found with matching email";
+  } else {
+    loginPasswordVal.innerText =
+      "The password that you've entered is incorrect.";
+  }
 };
 
+let dashboardImg = document.querySelector("#dashboardImg");
+let dasBtn = document.querySelector("#dasBtn");
+// Dashboard
+dasBtn.innerText = Name;
+dashboardImg.src = picture;
 
-
-  // Dashboard
-  let dasBtn = document.querySelector('#dasBtn')
-  dasBtn.innerText =Name
-  
-  const logout= () =>{
-    localStorage.clear()
-    window.location.href = "./index.html";
-  }
-  
-
-
+const logout = () => {
+  localStorage.clear();
+  window.location.href = "./index.html";
+};
