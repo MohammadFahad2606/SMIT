@@ -1,3 +1,20 @@
+// menubar
+let menubarget = document.querySelector(".haderMenu");
+let menuBarShow = false;
+const menubar = () => {
+  menuBarShow = !menuBarShow;
+  if (menuBarShow) {
+    menubarget.style.position = "relative";
+    menubarget.style.transition = "0.2s";
+    menubarget.style.marginTop = 0;
+  } else {
+    menubarget.style.marginTop = "-10rem";
+    menubarget.style.position = "absolute";
+    menubarget.style.transition = "0.2s";
+    console.log(menuBarShow);
+  }
+};
+
 // // // // // Regex
 
 let emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -24,8 +41,6 @@ const [
 // // // uploadImage
 
 let showPic = document.querySelector("#profiepic");
-// let showPicDiv = document.querySelector(".showPic");
-// console.log(showPic.src);
 const uploadImage = () => {
   let img = userPic.files[0];
   let fileRead = new FileReader();
@@ -34,23 +49,21 @@ const uploadImage = () => {
     showPic.src = imgUrl;
   };
   fileRead.readAsDataURL(img);
-  // showPicDiv.style.display = "block"
   showPic.src = imgUrl;
 };
 
-const homePage = () => {
-  console.log("home");
-  window.location.href = "./index.html";
-};
-
-// // //  Signup Function
+//  Signup Function
 //
+//
+let userArryData = JSON.parse(localStorage.getItem("userData")) || [];
 const signup = () => {
   event.preventDefault();
-
+  let existingEmail = userArryData.find((item) => {
+    return item.email === userEmail.value;
+  });
+  // console.log(existingEmail);
   if (userName.value.trim() === "") {
     userNameValidation.innerText = "Name is required";
-  } else {
   }
 
   if (emailReg.test(userEmail.value) === true) {
@@ -63,32 +76,42 @@ const signup = () => {
     <li>1 number</li>
     </ul>`;
     }
-    
   } else {
     userEmailValidation.innerText = "Please Enter a Valid Email Address";
   }
-  if(userPassword.value === "") {
+  if (userPassword.value === "") {
     userPasswordValidation.innerHTML = `<p>Please Enter a password</p>`;
   }
- 
+  if (!existingEmail) {
+    if (confirmPassword.value !== "") {
+      if (userPassword.value != confirmPassword.value) {
+        confirmPasswordValidation.innerText = "Password Not Matched";
+      } else {
+        if (emailReg.test(userEmail.value) === !true) {
+          userEmailValidation.innerText = "Please Enter a Valid Email Address";
+        } else {
+          let obj = {
+            Name: userName.value,
+            email: userEmail.value,
+            password: userPassword.value,
+            picture: imgUrl,
+            role: "user",
+            islogin: false,
+          };
 
-  if (confirmPassword.value !== "") {
-    if (userPassword.value != confirmPassword.value) {
-      confirmPasswordValidation.innerText = "Password Not Matched";
+          userArryData.push(obj);
+
+          // console.log(userPic);
+          localStorage.setItem("userData", JSON.stringify(userArryData));
+          console.log(userArryData);
+          window.location.href = "./login.html";
+        }
+      }
     } else {
-      const userData = {
-        Name: userName.value,
-        email: userEmail.value,
-        password: userPassword.value,
-        picture: imgUrl,
-      };
-
-      // console.log(userPic);
-      localStorage.setItem("userData", JSON.stringify(userData));
-      window.location.href = "./login.html";
+      confirmPasswordValidation.innerText = "Please Enter Confirm Password";
     }
   } else {
-    confirmPasswordValidation.innerText = "Please Enter Confirm Password";
+    userEmailValidation.innerText = "Existing Email Address";
   }
 
   if (
@@ -152,32 +175,93 @@ const { email, password, Name, picture } = data;
 
 // login
 
+let loginEye = document.getElementById(".loginEye");
+let loginIsShow = false;
+const loginShowPassword = () => {
+  loginIsShow = !loginIsShow;
+  // console.log(loginIsShow);
+  if (loginIsShow) {
+    loginPassword.type = "text";
+    eye.classList.remove("fa-eye-slash");
+    eye.classList.add("fa-eye");
+  } else {
+    loginPassword.type = "password";
+    eye.classList.remove("fa-eye");
+    eye.classList.add("fa-eye-slash");
+  }
+};
+
 const login = () => {
   event.preventDefault();
 
+  let getData = data.find((item) => {
+    return item.email === loginEmail.value;
+  });
+  // console.log(getData.password);
+
+  const removeLoginValidation = () => {
+    loginEmailVal.innerText = "";
+    loginPasswordVal.innerText = "";
+  };
   if (loginEmail.value.trim() === "") {
-    loginEmailVal.innerText = "Please Enter Email";
+    loginEmailVal.innerText = "Please Enter Your Email";
   }
   if (loginPassword.value.trim() === "") {
-    loginPasswordVal.innerText = "Please Enter Password";
+    loginPasswordVal.innerText = "Password Flied is Empty";
   }
-  if (loginEmail.value === email && loginPassword.value === password) {
+  if (!getData) {
+    loginEmailVal.innerText = "User Not Found";
+  }
+  setTimeout(() => {
+    removeLoginValidation();
+  }, 2000);
+  if (loginPassword.value === getData.password) {
+    // console.log(getData.islogin);
+    getData.islogin = true;
+    // console.log(getData.islogin);
+    localStorage.setItem("userData", JSON.stringify(data));
+
     window.location.href = "./dashboard.html";
-  } else if (loginEmail.value !== email && loginPassword.value !== password) {
-    loginEmailVal.innerText = "No user found with matching email";
   } else {
-    loginPasswordVal.innerText =
-      "The password that you've entered is incorrect.";
+    if (loginEmail.value.trim() === "") {
+      loginEmailVal.innerText = "Please Enter Your Email";
+    }
+    if (loginPassword.value.trim() === "") {
+      loginPasswordVal.innerText = "Password Flied is Empty";
+    }
+    loginPasswordVal.innerText = "Please check again Password ";
   }
+
+  setTimeout(() => {
+    removeLoginValidation();
+  }, 2000);
 };
 
 let dashboardImg = document.querySelector("#dashboardImg");
 let dasBtn = document.querySelector("#dasBtn");
+
 // Dashboard
-dasBtn.innerText = Name;
-dashboardImg.src = picture;
+
+let getDataDashboard = data.find((item) => {
+  return item.islogin === true;
+});
+
+dasBtn.innerText = getDataDashboard.Name;
+if (!getDataDashboard.picture) {
+  dashboardImg.src = "./asset/user_icon.png";
+} else {
+  dashboardImg.src = getDataDashboard.picture;
+}
+
+const dashboardPageRedirecr = () => {
+  console.log(getDataDashboard);
+};
 
 const logout = () => {
-  localStorage.clear();
+  console.log(getDataDashboard.islogin);
+  getDataDashboard.islogin = false;
+  console.log(getDataDashboard.islogin);
+  localStorage.setItem("userData", JSON.stringify(data));
+
   window.location.href = "./index.html";
 };

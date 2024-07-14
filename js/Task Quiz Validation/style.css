@@ -21,19 +21,31 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 20px 40px;
 }
 #logo {
   cursor: pointer;
 }
-.header-wapper a {
+.sidebar {
+  display: none;
+}
+.haderMenu {
+  display: none;
+}
+.sidebar i {
+  color: #fcc822;
+  font-size: 2rem;
+}
+.header-wapper a,
+.haderMenu a {
   text-decoration: none;
   padding: 0 15px;
   color: var(--text);
   transition: 0.5s;
 }
-.header-wapper a:hover {
+.header-wapper a:hover,
+.haderMenu a:hover {
   border-bottom: 2px solid var(--primary);
   transition: 0.1s;
 }
@@ -49,12 +61,12 @@
   transition: 0.5s;
 }
 .container {
-  width: 80%;
+  width: 100%;
   display: flex;
   margin: 50px auto;
 }
 .container img {
-  width: 40%;
+  width: 50%;
 }
 .wapper {
   width: 50%;
@@ -64,6 +76,7 @@
 }
 .wapper h1 {
   font-size: 3rem;
+  font-weight: 600;
 }
 .wapper p {
   padding-left: 10px;
@@ -77,6 +90,7 @@
 .group h4 {
   color: var(--primary);
   cursor: pointer;
+  font-size: 1.2rem;
 }
 .btn1 {
   padding: 10px 20px;
@@ -186,6 +200,7 @@ input[type="checkbox"] {
 .loginBtns {
   display: flex;
   gap: 50px;
+  padding-top: 20px;
 }
 
 .heading h3 {
@@ -244,8 +259,13 @@ label i {
 
 @media screen and (max-width: 750px) {
   body {
+    /* background-color: aqua; */
     display: flex;
     justify-content: center;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
   }
   .main-login {
     display: flex;
@@ -253,10 +273,52 @@ label i {
     justify-content: center;
     align-items: center;
   }
+  .header {
+    justify-content: space-between;
+  }
+  .sidebar {
+    display: block;
+  }
+  .sidebar i {
+    cursor: pointer;
+    color: #fcc822;
+  }
+  .header-wapper {
+    display: none;
+  }
+  .haderMenu {
+    /* transition: 1s; */
+    position: absolute;
+    margin-top: -10rem;
+    /* background-color: #333333; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .haderMenu a:hover {
+    transition: 0.5s;
+    padding: 10px;
+    font-weight: bolder;
+    background-color: #fcc92218;
+  }
+
+  .container {
+    margin: 20px 10px;
+    width: 90%;
+  }
+  .wapper h1 {
+    font-size: 2rem;
+  }
   .login-wrapper {
     padding: 0 10px;
     width: 100%;
     /* gap: 5px; */
+  }
+  .group h4 {
+    font-size: 1rem;
+  }
+  .group .btn1 {
+    font-size: .8rem;
   }
   .image {
     display: none;
@@ -266,7 +328,27 @@ label i {
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
+  body {
+    /* background-color: #333333; */
+  }
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main img{
+    width:130px;
+    /* flex-wrap: wrap; */
+  }
+  .heroImge{
+    /* background-color: #fcc822; */
+    width: 100%;
+    display: none;
+  }
+  .wapper{
+    width: 100%;
+  }
   .login-wrapper {
     padding: 0 auto;
     width: 100%;

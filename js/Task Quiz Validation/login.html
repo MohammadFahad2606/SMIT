@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css" />
     <link
@@ -18,14 +19,15 @@
   </head>
   <body>
     <div class="main-login">
+      <div class="image">
+        <img src="./asset/Login-Hero.png" alt="Hero_image" />
+      </div>
       <div class="login-wrapper">
+        
         <div>
-          <img
-            onclick="homePage()"
-            id="logo"
-            src="./asset/QuizGrad-logo.png"
-            alt="Logo"
-          />
+          <a href="./index.html"
+            ><img id="logo" src="./asset/QuizGrad-logo.png" alt="Logo"
+          /></a>
         </div>
         <h3>Welcome back! Please login/Signup to your account.</h3>
         <form id="loginForm" onsubmit="login()" class="form">
@@ -35,24 +37,22 @@
               <input type="text" name="email" id="email" />
             </div>
             <p class="validation"></p>
-            <div class="box">
+
+            <div class="box eye">
+              <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" />
+              </div>
+              <i id="eye" onclick="loginShowPassword();" class="fa-solid fa-eye-slash"></i>
+            </div>
+            <p class="validation"></p>
+
+            <!-- <div class="box">
               <label for="password">Password</label>
               <input type="password" name="Password" id="password" />
             </div>
-            <!-- <div class="box eye">
-              <div>
-                <label for="user-password">Password</label>
-                <input type="password" id="user-password" />
-              </div>
-              <i
-                id="eye"
-                onclick="showPasswordLogin();"
-                class="fa-solid fa-eye-slash"
-              ></i>
-            </div>-->
             <p class="validation"></p>
-               
-          </div> 
+          </div> -->
 
           <div onsubmit="login()" class="flex">
             <div class="align">
@@ -68,9 +68,7 @@
         </form>
       </div>
 
-      <div class="image">
-        <img src="./asset/Login-Hero.png" alt="Hero_image" />
-      </div>
+      
     </div>
 
     <script src="app.js"></script>
