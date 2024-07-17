@@ -237,31 +237,15 @@ const login = () => {
   }, 2000);
 };
 
-let dashboardImg = document.querySelector("#dashboardImg");
-let dasBtn = document.querySelector("#dasBtn");
-
-// Dashboard
-
 let getDataDashboard = data.find((item) => {
   return item.islogin === true;
 });
 
-dasBtn.innerText = getDataDashboard.Name;
-if (!getDataDashboard.picture) {
-  dashboardImg.src = "./asset/user_icon.png";
-} else {
-  dashboardImg.src = getDataDashboard.picture;
+const pageRedirecrDashboard = () => {
+  window.location.href = "./dashboard.html";
+  console.log("loginpage");
+};
+
+if (getDataDashboard) {
+  pageRedirecrDashboard();
 }
-
-const dashboardPageRedirecr = () => {
-  console.log(getDataDashboard);
-};
-
-const logout = () => {
-  console.log(getDataDashboard.islogin);
-  getDataDashboard.islogin = false;
-  console.log(getDataDashboard.islogin);
-  localStorage.setItem("userData", JSON.stringify(data));
-
-  window.location.href = "./index.html";
-};
