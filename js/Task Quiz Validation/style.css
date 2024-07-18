@@ -236,6 +236,24 @@ input[type="checkbox"] {
 .flex1 i {
   font-size: 50px;
 }
+
+/* dashdoard */
+
+.main-dashdoard {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-direction: column;
+}
+
+.header-dashdoard {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  box-shadow: 2px 2px 10px #c5c5c5;
+  /* background-color: #fcc822; */
+}
 #userPic {
   display: none;
 }
@@ -256,6 +274,59 @@ label i {
   cursor: pointer;
   /* width: 20px; */
 }
+
+.container-dashdoard {
+  box-shadow: 5px 5px 10px #c5c5c5;
+  /* background-color: aqua; */
+  padding: 30px;
+  height: 80vh;
+  width: 90%;
+  border-radius: 10px;
+  /* overflow:40px; */
+}
+.container-dashdoard h1 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
+/* loader */
+
+.loaderScreen{
+  position: absolute;
+  height: 100%;
+  background-color:#33333381;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* display: none; */
+}
+
+
+.loader {
+  /* display: none; */
+  position: relative;
+  z-index: 100;
+  width: 20vw;
+  aspect-ratio: .75;
+  --c: no-repeat linear-gradient(#fcc822 0 0);
+  background: 
+    var(--c) 0%   100%,
+    var(--c) 50%  100%,
+    var(--c) 100% 100%;
+  background-size: 20% 65%;
+  animation: l5 1s infinite linear;
+}
+@keyframes l5 {
+  20% {background-position: 0% 50% ,50% 100%,100% 100%}
+  40% {background-position: 0% 0%  ,50% 50% ,100% 100%}
+  60% {background-position: 0% 100%,50% 0%  ,100% 50% }
+  80% {background-position: 0% 100%,50% 100%,100% 0%  }
+}
+
+
 
 @media screen and (max-width: 750px) {
   body {
@@ -318,7 +389,7 @@ label i {
     font-size: 1rem;
   }
   .group .btn1 {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
   .image {
     display: none;
@@ -332,21 +403,21 @@ label i {
   body {
     /* background-color: #333333; */
   }
-  .container{
+  .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
-  .main img{
-    width:130px;
+  .main img {
+    width: 130px;
     /* flex-wrap: wrap; */
   }
-  .heroImge{
+  .heroImge {
     /* background-color: #fcc822; */
     width: 100%;
     display: none;
   }
-  .wapper{
+  .wapper {
     width: 100%;
   }
   .login-wrapper {

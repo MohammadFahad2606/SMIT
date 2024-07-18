@@ -14,7 +14,8 @@ const menubar = () => {
     console.log(menuBarShow);
   }
 };
-
+let loader = document.querySelector("#loader");
+let loaderScreen = document.querySelector("#loaderScreen");
 // // // // // Regex
 
 let emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -55,9 +56,28 @@ const uploadImage = () => {
 //  Signup Function
 //
 //
+let userArryDataAdmin = JSON.parse(localStorage.getItem("userData")) || [];
+// console.log(userArryDataAdmin)
+if (userArryDataAdmin.length === 0) {
+  //  console.log('add')
+  let objAdmin = {
+    Name: "Admin",
+    email: "fahad@admin.com",
+    password: "admin1234",
+    picture: imgUrl,
+    role: "admin",
+    islogin: false,
+  };
+
+  userArryDataAdmin.push(objAdmin);
+  localStorage.setItem("userData", JSON.stringify(userArryDataAdmin));
+}
+
 let userArryData = JSON.parse(localStorage.getItem("userData")) || [];
+
 const signup = () => {
   event.preventDefault();
+
   let existingEmail = userArryData.find((item) => {
     return item.email === userEmail.value;
   });
@@ -67,7 +87,7 @@ const signup = () => {
   }
 
   if (emailReg.test(userEmail.value) === true) {
-    if (passwordReg.test(userPassword.value) === true) {
+    if (passwordReg.test(userPassword.value)) {
     } else {
       userPasswordValidation.innerHTML = `<p>Your password must be have at least</p>
       <ul>
@@ -87,24 +107,39 @@ const signup = () => {
       if (userPassword.value != confirmPassword.value) {
         confirmPasswordValidation.innerText = "Password Not Matched";
       } else {
-        if (emailReg.test(userEmail.value) === !true) {
-          userEmailValidation.innerText = "Please Enter a Valid Email Address";
+        if (!passwordReg.test(userPassword.value)) {
+          userPasswordValidation.innerHTML = `<p>Your password must be have at least</p>
+          <ul>
+          <li>8 characters long</li>
+          <li>1 uppercase &amp; 1 lowercase character</li>
+          <li>1 number</li>
+          </ul>`;
         } else {
-          let obj = {
-            Name: userName.value,
-            email: userEmail.value,
-            password: userPassword.value,
-            picture: imgUrl,
-            role: "user",
-            islogin: false,
-          };
+          if (emailReg.test(userEmail.value) === !true) {
+            userEmailValidation.innerText =
+              "Please Enter a Valid Email Address";
+          } else {
+            let obj = {
+              Name: userName.value,
+              email: userEmail.value,
+              password: userPassword.value,
+              picture: imgUrl,
+              role: "user",
+              islogin: false,
+            };
 
-          userArryData.push(obj);
+            userArryData.push(obj);
 
-          // console.log(userPic);
-          localStorage.setItem("userData", JSON.stringify(userArryData));
-          console.log(userArryData);
-          window.location.href = "./login.html";
+            // console.log(userPic);
+            localStorage.setItem("userData", JSON.stringify(userArryData));
+            loaderScreen.classList.add("loaderScreen");
+            loader.classList.add("loader");
+            setTimeout(() => {
+              window.location.href = "./login.html";
+              loaderScreen.classList.remove("loaderScreen");
+              loader.classList.remove("loader");
+            }, 2000);
+          }
         }
       }
     } else {
@@ -150,10 +185,22 @@ const showPassword = () => {
   }
 };
 const signupPageRedirecr = () => {
-  window.location.href = "./Signup.html";
+  loaderScreen.classList.add("loaderScreen");
+  loader.classList.add("loader");
+  setTimeout(() => {
+    window.location.href = "./Signup.html";
+    loaderScreen.classList.remove("loaderScreen");
+    loader.classList.remove("loader");
+  }, 1000);
 };
 const loginPageRedirecr = () => {
-  window.location.href = "./login.html";
+  loaderScreen.classList.add("loaderScreen");
+  loader.classList.add("loader");
+  setTimeout(() => {
+    window.location.href = "./login.html";
+    loaderScreen.classList.remove("loaderScreen");
+    loader.classList.remove("loader");
+  }, 500);
 };
 
 // loginFrom
@@ -197,7 +244,6 @@ const login = () => {
   let getData = data.find((item) => {
     return item.email === loginEmail.value;
   });
-  // console.log(getData.password);
 
   const removeLoginValidation = () => {
     loginEmailVal.innerText = "";
@@ -216,12 +262,15 @@ const login = () => {
     removeLoginValidation();
   }, 2000);
   if (loginPassword.value === getData.password) {
-    // console.log(getData.islogin);
     getData.islogin = true;
-    // console.log(getData.islogin);
     localStorage.setItem("userData", JSON.stringify(data));
-
-    window.location.href = "./dashboard.html";
+    loaderScreen.classList.add("loaderScreen");
+    loader.classList.add("loader");
+    setTimeout(() => {
+      window.location.href = "./dashboard.html";
+      loaderScreen.classList.remove("loaderScreen");
+      loader.classList.remove("loader");
+    }, 2000);
   } else {
     if (loginEmail.value.trim() === "") {
       loginEmailVal.innerText = "Please Enter Your Email";
