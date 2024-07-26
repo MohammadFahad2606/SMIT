@@ -48,7 +48,7 @@ function showData(data) {
           <img src="./asset/user-logo.png" alt="" />${followers} followers
           <span>${following} following</span>
         </li>
-        <li><img src="./asset/location-logo.png" alt="" />Pakistan</li>
+        <li><img src="./asset/location-logo.png" alt="" />${location}</li>
       </ul>
     </div>`;
 }
