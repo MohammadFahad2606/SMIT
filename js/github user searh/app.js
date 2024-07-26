@@ -12,11 +12,20 @@ function fetchAPI() {
         return res.json();
       })
       .then((data) => {
-        showData(data);
+        // console.log(data);
+        if (data.message === "Not Found") {
+          card.innerHTML = `<h3 class="error">User not Found</h3>`;
+        } else {
+          showData(data);
+        }
       })
       .catch((error) => {
-        card.innerHTML = `<h3 class="error">User not Found</h3>`;
+        // console.log(error);
       });
+    //   .catch((error) => {
+    //     console.log(error);
+    //     card.innerHTML = `<h3 class="error">User not Found</h3>`;
+    //   });
   }
 
   userInput.value = "";
