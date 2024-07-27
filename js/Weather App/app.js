@@ -1,7 +1,6 @@
 const apicall = () => {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-`);
-};
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`
+       );};
 
 // function getCurrentLocation() {
 //   navigator.geolocation.getCurrentPosition(
@@ -18,7 +17,7 @@ const apicall = () => {
 async function getCruntDataApi(lat, lon) {
   try {
     let data = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=fb763078c8af7fcd748f1e4f15057d46`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid={API key}`
     );
     let res = await data.json();
     console.log(res);
