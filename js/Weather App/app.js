@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let cityname = document.querySelector("#search");
 let searchBtn = document.querySelector("#searchbtn");
 let apikey =
@@ -7,8 +8,26 @@ function fetchdata() {
 
 
 
+=======
+const apicall = () => {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}`
+       );};
+>>>>>>> f879a1ebb35230c375cd73af30c78db94d15bff0
 
 
+<<<<<<< HEAD
+=======
+async function getCruntDataApi(lat, lon) {
+  try {
+    let data = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid={API key}`
+    );
+    let res = await data.json();
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
+>>>>>>> f879a1ebb35230c375cd73af30c78db94d15bff0
 }
 
 // const apicall = () => {
