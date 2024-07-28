@@ -5,15 +5,16 @@ let highlightBox = document.querySelector(".highlight-box-wrapper");
 let locationBtn = document.querySelector(".locationBtn");
 let apikey = "fb763078c8af7fcd748f1e4f15057d46";
 // let geoCoordsKarachi = [24.9056, 67.0822];
-
-locationBtn.addEventListener("click", () => {
+locationBtn.addEventListener("click", locationAuto);
+function locationAuto() {
   navigator.geolocation.getCurrentPosition((position) => {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
     // dailyForecastData(latitude, longitude);
     currentWeatherData(latitude, longitude);
   });
-});
+}
+locationAuto();
 
 // function dailyForecastData not work API not respouns
 
