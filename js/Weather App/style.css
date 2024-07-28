@@ -160,3 +160,94 @@ button {
 .highlight-box h1 sup {
   font-size: 1rem;
 }
+
+/* media screen tablet */
+
+@media screen and (max-width: 704px) {
+  .main {
+    background-color: aqua;
+  }
+  .row {
+    width: 35%;
+  }
+  .box {
+    width: 65%;
+  }
+  .highlight-box {
+    width: 45%;
+  }
+
+  .highlight-box h5 {
+    font-size: 0.7rem;
+    padding-bottom: 10px;
+  }
+}
+
+/* media screen small tablet */
+
+@media screen and (max-width: 576px) {
+  .row {
+    width: 45%;
+  }
+  .box {
+    width: 55%;
+    overflow: auto;
+  }
+  .highlight-box {
+    width: 100%;
+  }
+
+  .highlight-box h5 {
+    font-size: 0.7rem;
+    padding-bottom: 10px;
+  }
+}
+
+/* media screen  mobile */
+
+@media screen and (max-width: 425px) {
+  .main {
+    width: 100%;
+  }
+  .contanter {
+    overflow: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .row {
+    width: 100%;
+    height: auto;
+  }
+  .row h1 {
+    font-size: 3rem;
+  }
+  .row-wrapper h4 {
+    font-size: 1.2rem;
+  }
+  .box {
+    width: 100%;
+    overflow: auto;
+  }
+  .highlights-heading {
+    font-size: 1.2rem;
+  }
+  .highlight-box-wrapper {
+    align-items: center;
+    justify-content: center;
+  }
+  .highlight-box {
+    width: 80%;
+  }
+
+  .highlight-box h5 {
+    font-size: 0.7rem;
+    padding-bottom: 10px;
+  }
+}
+/* media small screen  mobile */
+
+@media screen and (max-width: 320px) {
+  .highlight-box {
+    width: 100%;
+  }
+}
