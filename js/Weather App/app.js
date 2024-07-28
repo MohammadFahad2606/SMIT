@@ -4,37 +4,37 @@ let leftRow = document.querySelector(".row-wrapper");
 let highlightBox = document.querySelector(".highlight-box-wrapper");
 let locationBtn = document.querySelector(".locationBtn");
 let apikey = "fb763078c8af7fcd748f1e4f15057d46";
-let geoCoords = [24.9056, 67.0822];
+// let geoCoordsKarachi = [24.9056, 67.0822];
 
 locationBtn.addEventListener("click", () => {
   navigator.geolocation.getCurrentPosition((position) => {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
-    dailyForecastData(latitude, longitude);
-    // currentWeatherData(latitude, longitude);
+    // dailyForecastData(latitude, longitude);
+    currentWeatherData(latitude, longitude);
   });
 });
 
-// function dailyForecastData
+// function dailyForecastData not work API not respouns
 
-function dailyForecastData(latitude, longitude) {
-  console.log(latitude, longitude);
-  // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-  fetch(
-    `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={apikey}`
-  )
-    .then((res) => {
-      // console.log(res);
-      return res.json();
-    })
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.log(error);
-      // alert(error);
-    });
-}
+// function dailyForecastData(latitude, longitude) {
+//   console.log(latitude, longitude);
+//   // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+//   fetch(
+//     `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={apikey}`
+//   )
+//     .then((res) => {
+//       // console.log(res);
+//       return res.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       // alert(error);
+//     });
+// }
 
 function currentWeatherData(latitude, longitude) {
   // console.log(latitude, longitude);
@@ -137,32 +137,3 @@ cityname.addEventListener("keyup", (e) => {
     fetchdata();
   }
 });
-
-// const apicall = () => {
-//   fetch(`https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-// `);
-// };
-
-// // function getCurrentLocation() {
-// //   navigator.geolocation.getCurrentPosition(
-// //     (position) => {
-// //       getCruntDataApi(position.coords.latitude, position.coords.longitude);
-// //     },
-// //     (error) => {
-// //       alert(error.message);
-// //     }
-// //   );
-// // }
-// // getCurrentLocation();
-
-// async function getCruntDataApi(lat, lon) {
-//   try {
-//     let data = await fetch(
-//       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=fb763078c8af7fcd748f1e4f15057d46`
-//     );
-//     let res = await data.json();
-//     console.log(res);
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
