@@ -164,9 +164,6 @@ button {
 /* media screen tablet */
 
 @media screen and (max-width: 704px) {
-  .main {
-    background-color: aqua;
-  }
   .row {
     width: 35%;
   }
