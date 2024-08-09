@@ -15,7 +15,7 @@ ul li span {
 }
 .container {
   padding: 30px;
-  width: 40vw;
+  width: 50vw;
 }
 .header {
   display: flex;
@@ -48,4 +48,18 @@ ul li span {
 }
 .error {
   color: red;
+}
+/* tab screen */
+@media screen and (max-width: 768px) {
+ .container {
+    width: 70vw;
+  }
+}
+
+/* mobile screen */
+@media screen and (max-width: 425px) {
+.container {
+  padding: 10px;
+    width: 100vw;
+  }
 }

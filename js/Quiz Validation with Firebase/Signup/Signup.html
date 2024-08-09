@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="shortcut icon" href="../asset/QuizGrad-logo.png" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="main-login">
+    <div id="loaderScreen" class="">
+        <div id="loader" class=""></div>
+      </div>
+    
+    <div class="login-wrapper">
+      <div> <a href="../index.html"><img id="logo" src="../asset/QuizGrad-logo.png" alt="Logo" /></a></div>
+      <div class="heading">
+        <h3>Sign Up</h3>
+        <p class="singUp_p">It's quick and easy</p>
+      </div>
+      <div>
+        <form >
+
+          <!-- Email AddressL -->
+          <div class="box">
+            <label for="user-email">Email Address</label>
+            <input type="text" id="user-email" />
+          </div>
+          <p class="validation"></p>
+
+
+          <!-- Password -->
+          <div class="box eye">
+            <div>
+              <label for="user-password">Password</label>
+              <input type="password" id="user-password" />
+            </div>
+            <i id="eye"  class="fa-solid fa-eye-slash"></i>
+          </div>
+          <p class="validation"></p>
+
+            <!-- Confirm Password -->
+            <div class="box eye">
+              <div>
+                <label for="confirm-password">Confirm Password</label>
+
+                <input type="password" id="confirm-password" />
+              </div>
+
+            </div>
+            <p class="validation" id=></p>
+
+        </div>
+
+
+      <div class="loginBtns">
+        <button id="signup-btn" class="btn1">Signup</button>
+        <button  class="btn2"><a href="../login/login.html">Login</a></button>
+      </div>
+      </form>
+    </div>
+
+
+    <!-- Login-Hero -->
+    <div class="image">
+      <img src="../asset/Login-Hero.png" alt="Hero_image" />
+    </div>
+  </div>
+<script type="module" src="../firebase.js"></script>
+  <script type="module" src="Signup.js"  ></script>
+
+</body>
+
+</html>

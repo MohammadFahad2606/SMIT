@@ -10,8 +10,9 @@ function locationAuto() {
   navigator.geolocation.getCurrentPosition((position) => {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
+    // console.log(latitude, longitude);
     // dailyForecastData(latitude, longitude);
-    currentWeatherData(latitude, longitude);
+    // currentWeatherData(latitude, longitude);
   });
 }
 locationAuto();
@@ -38,24 +39,33 @@ locationAuto();
 // }
 
 function currentWeatherData(latitude, longitude) {
-  // console.log(latitude, longitude);
+  console.log(latitude, longitude);
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apikey}`
   )
     .then((res) => {
+      console.log(res);
       return res.json();
     })
     .then((data) => {
       showdata(data);
+      console.log(error);
     })
     .catch((error) => {
-      alert(error);
+      // console.log(error);
+      // Swal.fire({
+      //   icon: "error",
+      //   text: error,
+      // });
     });
 }
 
 function fetchdata() {
   if (cityname.value.trim() === "") {
-    alert("input Feid is Empty");
+    Swal.fire({
+      icon: "error",
+      text: "input Feid is Empty",
+    });
   } else {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityname.value}&units=metric&appid=${apikey}`
@@ -67,7 +77,12 @@ function fetchdata() {
         showdata(data);
       })
       .catch((error) => {
-        alert(error);
+        Swal.fire({
+          icon: "error",
+          text: error,
+        });
+
+        // alert(error);
       });
   }
   cityname.value = "";
@@ -79,6 +94,8 @@ function showdata(data) {
   const { temp } = data.main;
   let updatedTemp = Math.floor(temp);
   let { main, id } = data.weather[0];
+  let sunrise = data.sys.sunrise;
+  console.log(sunrise);
   let urlImg;
 
   if (id >= 200 && id <= 232) {

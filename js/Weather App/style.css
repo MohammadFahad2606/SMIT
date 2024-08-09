@@ -215,6 +215,10 @@ button {
     width: 100%;
     height: auto;
   }
+  .weather-icon {
+    width: 80%;
+    object-fit: contain;
+}
   .row h1 {
     font-size: 3rem;
   }
@@ -244,6 +248,10 @@ button {
 /* media small screen  mobile */
 
 @media screen and (max-width: 320px) {
+  .weather-icon {
+    width: 80%;
+    object-fit: contain;
+}
   .highlight-box {
     width: 100%;
   }
